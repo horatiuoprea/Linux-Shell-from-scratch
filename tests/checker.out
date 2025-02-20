@@ -1,0 +1,66 @@
+make -C ../src UTIL_PATH=/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../util clean
+make[1]: Entering directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/src'
+rm -f ../src.zip
+rm -rf main.o cmd.o utils.o /home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../util/parser/parser.tab.o /home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../util/parser/parser.yy.o mini-shell *~
+make[1]: Leaving directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/src'
+make clean
+make[1]: Entering directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests'
+rm -f *~
+make[1]: Leaving directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests'
+make -i SRC_PATH=../src
+make[1]: Entering directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests'
+make -C ../src UTIL_PATH=/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../util CPPFLAGS=-I/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../src
+make[2]: Entering directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/src'
+make -C /home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../util/parser/
+make[3]: Entering directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/util/parser'
+gcc  -c parser.tab.c
+gcc  -c parser.yy.c
+g++  -o UseParser UseParser.o parser.tab.o parser.yy.o
+g++  -o DisplayStructure DisplayStructure.o parser.tab.o parser.yy.o
+g++  -o CUseParser CUseParser.o parser.tab.o parser.yy.o
+make[3]: Leaving directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/util/parser'
+gcc -g -Wall -I/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../src  -c -o main.o main.c
+gcc -g -Wall -I/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../src  -c -o cmd.o cmd.c
+cmd.c:75:13: warning: ‘run_on_pipe’ defined but not used [-Wunused-function]
+   75 | static bool run_on_pipe(command_t *cmd1, command_t *cmd2, int level,
+      |             ^~~~~~~~~~~
+cmd.c:64:13: warning: ‘run_in_parallel’ defined but not used [-Wunused-function]
+   64 | static bool run_in_parallel(command_t *cmd1, command_t *cmd2, int level,
+      |             ^~~~~~~~~~~~~~~
+cmd.c:40:12: warning: ‘parse_simple’ defined but not used [-Wunused-function]
+   40 | static int parse_simple(simple_command_t *s, int level, command_t *father)
+      |            ^~~~~~~~~~~~
+cmd.c:29:12: warning: ‘shell_exit’ defined but not used [-Wunused-function]
+   29 | static int shell_exit(void)
+      |            ^~~~~~~~~~
+cmd.c:19:13: warning: ‘shell_cd’ defined but not used [-Wunused-function]
+   19 | static bool shell_cd(word_t *dir)
+      |             ^~~~~~~~
+gcc -g -Wall -I/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../src  -c -o utils.o utils.c
+gcc -g -Wall main.o cmd.o utils.o /home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../util/parser/parser.tab.o /home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests/../util/parser/parser.yy.o -o mini-shell
+make[2]: Leaving directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/src'
+make[1]: Leaving directory '/home/horatiu/An2_Sem1/so/Tema4/assignment-mini-shell/tests'
+SRC_PATH=../src ./run_all.sh
+
+                         = Testing - mini-shell =
+
+01) Testing commands without arguments......................failed  [ 0/100]
+02) Testing commands with arguments.........................failed  [ 0/100]
+03) Testing simple redirect operators.......................failed  [ 0/100]
+04) Testing append redirect operators.......................failed  [ 0/100]
+05) Testing current directory...............................failed  [ 0/100]
+06) Testing conditional operators...........................failed  [ 0/100]
+07) Testing sequential commands.............................failed  [ 0/100]
+08) Testing environment variables...........................failed  [ 0/100]
+09) Testing single pipe.....................................failed  [ 0/100]
+10) Testing multiple pipes..................................failed  [ 0/100]
+11) Testing variables and redirect..........................failed  [ 0/100]
+12) Testing overwritten variables...........................failed  [ 0/100]
+13) Testing all operators...................................failed  [ 0/100]
+14) Testing parallel operator...............................failed  [ 0/100]
+15) Testing big file........................................failed  [ 0/100]
+16) Testing sleep command...................................failed  [ 0/100]
+17) Testing fscanf function.................................failed  [ 0/100]
+18) Testing unknown command.................................failed  [ 0/100]
+
+Checker:   0/100

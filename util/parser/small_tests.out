@@ -1,0 +1,213 @@
+> print_params '$m
+Parse error near 14: syntax error
+Error parsing!
+
+
+> print_params "$m
+Parse error near 14: syntax error
+Error parsing!
+
+
+> print_params $
+Parse error near 13: syntax error
+Error parsing!
+
+
+> print_params $
+Parse error near 13: syntax error
+Error parsing!
+
+
+> print_params $'m'
+Parse error near 13: syntax error
+Error parsing!
+
+
+> print_params $"m"
+Parse error near 13: syntax error
+Error parsing!
+
+
+> print_params $$
+Parse error near 13: syntax error
+Error parsing!
+
+
+> print_params "$$"
+Parse error near 14: syntax error
+Error parsing!
+
+
+> p "$5"
+Parse error near 3: syntax error
+Error parsing!
+
+
+> p "$!"
+Parse error near 3: syntax error
+Error parsing!
+
+
+> p $5
+Parse error near 2: syntax error
+Error parsing!
+
+
+> p $!
+Parse error near 2: syntax error
+Error parsing!
+
+
+> print_params $ m
+Parse error near 13: syntax error
+Error parsing!
+
+
+> print_params >> f
+Command successfully read!
+command_t (
+    scmd (
+        simple_command_t (
+            verb (
+                'print_params'
+            )
+            out (
+                'f'
+                APPEND
+            )
+        )
+    )
+)
+
+
+> print_params << f
+Parse error near 14: syntax error
+Error parsing!
+
+
+> print_params <> f
+Parse error near 14: syntax error
+Error parsing!
+
+
+> print_params <2> f
+Parse error near 14: syntax error
+Error parsing!
+
+
+> print_params <&> f
+Parse error near 14: syntax error
+Error parsing!
+
+
+> print_params < $
+Parse error near 15: syntax error
+Error parsing!
+
+
+> <
+Parse error near 0: syntax error
+Error parsing!
+
+
+> >
+Parse error near 0: syntax error
+Error parsing!
+
+
+> 2>
+Parse error near 0: syntax error
+Error parsing!
+
+
+> &>
+Parse error near 0: syntax error
+Error parsing!
+
+
+> |
+Parse error near 0: syntax error
+Error parsing!
+
+
+> ||
+Parse error near 0: syntax error
+Error parsing!
+
+
+> &&
+Parse error near 0: syntax error
+Error parsing!
+
+
+> &
+Parse error near 0: syntax error
+Error parsing!
+
+
+> >>>>>>>>>>>>>>>>
+Parse error near 0: syntax error
+Error parsing!
+
+
+> <<<<<<<<<<<<<<<<<
+Parse error near 0: syntax error
+Error parsing!
+
+
+> &&&&&&&&&&&&&&&&
+Parse error near 0: syntax error
+Error parsing!
+
+
+> print_params > | err
+Parse error near 15: syntax error
+Error parsing!
+
+
+> ls|
+Parse error near 2: syntax error
+Error parsing!
+
+
+> | ls |
+Parse error near 0: syntax error
+Error parsing!
+
+
+> p "
+Parse error near 2: syntax error
+Error parsing!
+
+
+> p '
+Parse error near 2: syntax error
+Error parsing!
+
+
+> p ^
+Parse error near 2: syntax error
+Error parsing!
+
+
+> 	p 		<	"<"	&
+Parse error near 11: syntax error
+Error parsing!
+
+
+> p1 | > p2
+Parse error near 5: syntax error
+Error parsing!
+
+
+> 			> out
+Parse error near 3: syntax error
+Error parsing!
+
+
+> p1 > r1 p1
+Parse error near 8: syntax error
+Error parsing!
+
+
+> End of file!
